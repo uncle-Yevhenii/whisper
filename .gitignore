@@ -20,6 +20,7 @@ logs/
 dist/
 build/
 out/
+generated/
 
 # Dependency directories
 jspm_packages/
