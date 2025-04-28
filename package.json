@@ -3,6 +3,8 @@
     "version": "1.0.0",
     "scripts": {
         "start": "tsc && node dist/index.js",
+        "dev": "tsx watch src/index.ts",
+        "build": "tsc",
         "prepare": "husky",
         "lint": "eslint .",
         "lint:fix": "eslint . --fix",
@@ -28,6 +30,7 @@
         "@eslint/compat": "^1.2.8",
         "@eslint/js": "^9.25.1",
         "@types/express": "^5.0.1",
+        "@types/node": "^22.15.3",
         "eslint": "^9.25.1",
         "eslint-config-prettier": "^10.1.2",
         "eslint-plugin-prettier": "^5.2.6",
@@ -37,6 +40,7 @@
         "nodemon": "^3.1.10",
         "prettier": "3.5.3",
         "ts-node": "^10.9.2",
+        "tsx": "^4.19.3",
         "typescript": "^5.8.3",
         "typescript-eslint": "^8.31.0"
     },
