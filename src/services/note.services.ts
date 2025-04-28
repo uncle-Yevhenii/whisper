@@ -6,9 +6,7 @@ const prisma = new PrismaClient();
 export const noteCreateService = async (content: string): Promise<string> => {
     const { iv, encryptedData } = encrypt(content);
 
-    const note = await prisma.note.create({
-        data: { text: encryptedData, iv },
-    });
+    const note = await prisma.note.create({ data: { text: encryptedData, iv } });
 
     return note.id;
 };
