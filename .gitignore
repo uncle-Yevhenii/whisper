@@ -21,6 +21,7 @@ dist/
 build/
 out/
 generated/
+public/
 
 # Dependency directories
 jspm_packages/
