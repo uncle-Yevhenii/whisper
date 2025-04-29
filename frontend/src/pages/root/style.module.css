@@ -2,6 +2,7 @@
     margin: 0 auto;
     padding: 2em;
     max-width: 30em;
+    height: calc(100vh - 64px);
 }
 
 .linkBox {
@@ -29,4 +30,8 @@
 .buttonLink:focus,
 .buttonLink:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
+}
+
+.outlet {
+    height: calc(100% - 64px - 48px - 24px);
 }

@@ -19,7 +19,7 @@ export default function Root() {
                 ))}
             </ul>
 
-            <div>
+            <div className={style.outlet}>
                 <Outlet />
             </div>
         </div>

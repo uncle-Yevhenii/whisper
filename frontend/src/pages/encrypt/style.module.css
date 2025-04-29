@@ -1,0 +1,54 @@
+.textTitle {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 1.5em;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.button {
+    margin-bottom: 0.5em;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+.button:hover {
+    border-color: #646cff;
+}
+.button:focus,
+.button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+}
+
+.textarea {
+    resize: vertical;
+    max-width: 100%;
+    height: 100%;
+
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+.textarea:hover {
+    border-color: #646cff;
+}
+.textarea:focus,
+.textarea:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+}
