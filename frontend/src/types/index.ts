@@ -12,3 +12,7 @@ export type PingApiResponse = {
 export type CreateNoteApiResponse = {
     id: string;
 };
+
+export type GetNoteApiResponse = {
+    decodedText: string;
+};
