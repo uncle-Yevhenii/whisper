@@ -1,12 +1,15 @@
-import { Root, EncryptPage, DecryptPage, ErrorPage } from '../pages';
+import { Root, EncryptPage, DecryptPage, ErrorPage, AboutPage } from '../pages';
 import { RouterPath } from '../constants/route';
 
 export default [
     {
         path: RouterPath.ABOUT,
         element: <Root />,
-        errorElement: <ErrorPage />,
         children: [
+            {
+                path: RouterPath.ABOUT,
+                element: <AboutPage />,
+            },
             {
                 path: RouterPath.ENCRYPT,
                 element: <EncryptPage />,
@@ -17,6 +20,10 @@ export default [
             },
             {
                 path: RouterPath.ERROR,
+                element: <ErrorPage />,
+            },
+            {
+                path: '*',
                 element: <ErrorPage />,
             },
         ],

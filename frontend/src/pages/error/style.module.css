@@ -1,0 +1,40 @@
+.errorContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.textTitle {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 1em;
+}
+
+.errorMessage {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 500;
+    margin-bottom: 2.5em;
+}
+
+.buttonLink {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 4.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+.buttonLink:hover {
+    border-color: #646cff;
+}
+.buttonLink:focus,
+.buttonLink:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+}

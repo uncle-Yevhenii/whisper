@@ -10,6 +10,12 @@ export type RouterPathType = {
     ERROR: string;
 };
 
+export type ErrorState = {
+    errorMessage: string;
+    errorCode?: string;
+    timestamp?: string;
+};
+
 export type PingApiResponse = {
     message: 'pong';
 };

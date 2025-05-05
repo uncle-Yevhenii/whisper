@@ -1,12 +1,14 @@
 import { useState } from 'react';
-import { useParams } from 'react-router';
+import { useParams, useNavigate } from 'react-router';
 
+import { RouterPath } from '../../constants/route';
 import { NOTE_GET } from '../../api';
 
 import style from './style.module.css';
 
 export default function Decrypt() {
     const { id } = useParams();
+    const navigate = useNavigate();
     const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
     const [decryptedText, setDecryptedText] = useState<string>('');
 
@@ -14,8 +16,15 @@ export default function Decrypt() {
         setIsSubmitting(true);
 
         if (!id || id.length !== 36) {
-            console.error('ID is undefined');
-            setIsSubmitting(false);
+            const errorMessage = 'Invalid ID. ID must be 36 characters long.';
+            console.error(errorMessage);
+            navigate(RouterPath.ERROR, {
+                state: {
+                    errorMessage,
+                    errorCode: 'INVALID_ID',
+                    timestamp: new Date().toISOString(),
+                },
+            });
             return;
         }
 
@@ -24,8 +33,14 @@ export default function Decrypt() {
                 setDecryptedText(res.decodedText);
             })
             .catch((e) => {
-                // Handle error & redirect to error page
                 console.error(e);
+                navigate(RouterPath.ERROR, {
+                    state: {
+                        errorMessage: e.message || 'Message could not be decrypted.',
+                        errorCode: e.code || 'DECRYPT_ERROR',
+                        timestamp: new Date().toISOString(),
+                    },
+                });
             })
             .finally(() => {
                 setIsSubmitting(false);
