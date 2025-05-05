@@ -1,20 +1,14 @@
-import { Route, Routes } from 'react-router';
+import { createBrowserRouter, RouterProvider } from 'react-router';
 
-import { Root } from '../pages';
-import { RouteList } from '../constants/route';
+import routers from '../routers';
+
+const router = createBrowserRouter(routers);
 
 function App() {
     return (
-        <Routes>
-            <Route element={<Root />}>
-                {RouteList.map((route) => {
-                    const { component: Component, path } = route;
-                    return (
-                        <Route key={path} path={path === '/' ? '' : path} element={<Component />} />
-                    );
-                })}
-            </Route>
-        </Routes>
+        <>
+            <RouterProvider router={router} />
+        </>
     );
 }
 

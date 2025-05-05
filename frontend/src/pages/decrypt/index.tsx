@@ -13,7 +13,7 @@ export default function Decrypt() {
     const handleDecrypt = () => {
         setIsSubmitting(true);
 
-        if (!id) {
+        if (!id || id.length !== 36) {
             console.error('ID is undefined');
             setIsSubmitting(false);
             return;

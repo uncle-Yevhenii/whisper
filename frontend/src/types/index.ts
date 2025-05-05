@@ -1,8 +1,13 @@
 export type RouteListType = {
     name: string;
     path: string;
-    component: React.ComponentType;
     showInNavigation?: boolean;
+};
+export type RouterPathType = {
+    ABOUT: string;
+    ENCRYPT: string;
+    DECRYPT: string;
+    ERROR: string;
 };
 
 export type PingApiResponse = {

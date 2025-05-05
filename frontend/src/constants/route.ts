@@ -1,23 +1,31 @@
-import { RouteListType } from '../types';
-import { AboutPage, EncryptPage, DecryptPage } from '../pages';
+import { RouteListType, RouterPathType } from '../types';
+
+export const RouterPath: RouterPathType = {
+    ABOUT: '/',
+    ENCRYPT: '/encrypt',
+    DECRYPT: '/decrypt/:id',
+    ERROR: '/error',
+};
 
 export const RouteList: RouteListType[] = [
     {
         name: 'About',
-        path: '/',
-        component: AboutPage,
+        path: RouterPath.ABOUT,
         showInNavigation: true,
     },
     {
         name: 'Encrypt',
-        path: '/encrypt',
-        component: EncryptPage,
+        path: RouterPath.ENCRYPT,
         showInNavigation: true,
     },
     {
         name: 'Decrypt',
-        path: '/decrypt/:id',
-        component: DecryptPage,
+        path: RouterPath.DECRYPT,
+        showInNavigation: false,
+    },
+    {
+        name: 'Error',
+        path: RouterPath.ERROR,
         showInNavigation: false,
     },
 ];

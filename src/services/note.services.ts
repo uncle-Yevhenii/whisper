@@ -19,3 +19,10 @@ export const noteGetByIdService = async (id: string): Promise<string | null> => 
 
     return decryptedData;
 };
+
+export const noteDeleteService = async (id: string): Promise<string | null> => {
+    const note = await prisma.note.delete({ where: { id } });
+    if (!note) return null;
+
+    return note.id;
+};
