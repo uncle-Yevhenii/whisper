@@ -1,5 +1,10 @@
 import client from './client';
-import { PingApiResponse, CreateNoteApiResponse, GetNoteApiResponse } from '../types';
+import {
+    PingApiResponse,
+    CreateNoteApiResponse,
+    GetNoteApiResponse,
+    DeleteNoteApiResponse,
+} from '../types';
 
 export async function PING() {
     const response = await client.get<PingApiResponse>('/ping');
@@ -15,5 +20,10 @@ export async function NOTE_CREATE(body: string) {
 
 export async function NOTE_GET(id: string) {
     const response = await client.get<GetNoteApiResponse>(`/note/${id}`);
+    return response.data;
+}
+
+export async function NOTE_DELETE(id: string) {
+    const response = await client.delete<DeleteNoteApiResponse>(`/note/${id}`);
     return response.data;
 }

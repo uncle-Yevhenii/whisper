@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router';
 
 import { RouterPath } from '../../constants/route';
-import { NOTE_GET } from '../../api';
+import { NOTE_DELETE, NOTE_GET } from '../../api';
 
 import style from './style.module.css';
 
@@ -31,6 +31,16 @@ export default function Decrypt() {
         NOTE_GET(id)
             .then((res) => {
                 setDecryptedText(res.decodedText);
+                NOTE_DELETE(id).catch((e) => {
+                    console.error(e);
+                    navigate(RouterPath.ERROR, {
+                        state: {
+                            errorMessage: e.message || 'Message could not be deleted.',
+                            errorCode: e.code || 'DELETED_ERROR',
+                            timestamp: new Date().toISOString(),
+                        },
+                    });
+                });
             })
             .catch((e) => {
                 console.error(e);

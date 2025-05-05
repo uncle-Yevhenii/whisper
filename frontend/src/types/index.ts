@@ -27,3 +27,7 @@ export type CreateNoteApiResponse = {
 export type GetNoteApiResponse = {
     decodedText: string;
 };
+
+export type DeleteNoteApiResponse = {
+    deletedId: string;
+};
