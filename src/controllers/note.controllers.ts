@@ -31,5 +31,5 @@ export async function noteGetByIdController(req: Request, res: Response): Promis
     const note = await noteGetByIdService(id);
     if (!note) res.status(404).json('Note not found');
 
-    res.status(200).json({ id: note });
+    res.status(200).json({ decodedText: note });
 }
