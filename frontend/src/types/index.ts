@@ -5,6 +5,7 @@ export type RouteListType = {
 };
 export type RouterPathType = {
     ABOUT: string;
+    LINK: string;
     ENCRYPT: string;
     DECRYPT: string;
     ERROR: string;
@@ -14,6 +15,11 @@ export type ErrorState = {
     errorMessage: string;
     errorCode?: string;
     timestamp?: string;
+};
+
+export type LocationState = {
+    id: string;
+    timestamp: Date;
 };
 
 export type PingApiResponse = {

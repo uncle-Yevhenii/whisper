@@ -1,10 +1,13 @@
+import { useNavigate } from 'react-router';
 import { FormEvent, useRef, useState } from 'react';
 
+import { RouterPath } from '../../constants/route';
 import { NOTE_CREATE } from '../../api';
 
 import style from './style.module.css';
 
 export default function Encrypt() {
+    const navigate = useNavigate();
     const formRef = useRef<HTMLFormElement>(null);
     const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -20,12 +23,26 @@ export default function Encrypt() {
 
         if (!text.trim()) {
             setIsSubmitting(false);
+            const errorMessage = 'Text cannot be empty.';
+            console.error(errorMessage);
+            navigate(RouterPath.ERROR, {
+                state: {
+                    errorMessage,
+                    errorCode: 'EMPTY_TEXT',
+                    timestamp: new Date().toISOString(),
+                },
+            });
             return;
         }
 
         NOTE_CREATE(text)
             .then((res) => {
-                console.log(res, '<-res');
+                navigate(RouterPath.LINK.replace(':id', res.id), {
+                    state: {
+                        id: res.id,
+                        timestamp: new Date().toISOString(),
+                    },
+                });
             })
             .catch((e) => {
                 console.error(e);

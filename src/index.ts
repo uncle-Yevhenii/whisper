@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 
@@ -22,7 +22,7 @@ app.use(SERVER_OPTIONS.PATH_PREFIX, noteRouter);
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
-app.get(/^\/(?!api).*/, (_req, res) => {
+app.get(/^\/(?!api).*/, (_req: Request, res: Response) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
 });
 
