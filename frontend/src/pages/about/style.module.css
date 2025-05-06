@@ -1,0 +1,42 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5em;
+    height: 100%;
+}
+
+.textTitle {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.textSubtitle {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+.text {
+    text-align: justify;
+    font-size: 1em;
+    font-weight: 400;
+}
+.textSemiTitle {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 500;
+    margin-bottom: 0.5em;
+}
+.list {
+    list-style: disc;
+    text-align: left;
+    font-size: 1em;
+    font-weight: 400;
+    margin-bottom: 1.5em;
+    padding-left: 2em;
+}
+.list > li:not(:last-child) {
+    margin-bottom: 0.5em;
+}
