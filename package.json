@@ -7,7 +7,7 @@
         "clean:all": "npm run clean:server && npm run clean:client",
         "install:all": "npm install && cd frontend && npm install",
         "prisma:generate": "prisma generate",
-        "prebuild": "node -e \"require('fs').copyFileSync('.env', 'frontend/.env.local')\"",
+        "prebuild": "node ./writeFrontendEnv.mjs",
         "build:server": "tsc",
         "build:client": "cd frontend && npm run build",
         "build:all": "npm run install:all && npm run prisma:generate && npm run prebuild && npm run build:client && npm run build:server",
