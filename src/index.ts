@@ -1,6 +1,6 @@
-import express, { Request, Response } from 'express';
-import morgan from 'morgan';
 import cors from 'cors';
+import morgan from 'morgan';
+import express, { Request, Response } from 'express';
 
 import path from 'path';
 import config from './configs/config';

@@ -5,6 +5,9 @@ export const APP_NAME = import.meta.env.VITE_APP_NAME || 'Whisper';
 
 const client = axios.create({
     baseURL: BASE_URL,
+    headers: {
+        'Content-Type': 'application/json',
+    },
 });
 
 export default client;
