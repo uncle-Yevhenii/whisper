@@ -5,7 +5,7 @@
         "clean:server": "rm -rf dist/ node_modules/ public/ generated/",
         "clean:client": "cd frontend && rm -rf node_modules/ public/ .env.local",
         "clean:all": "npm run clean:server && npm run clean:client",
-        "install:all": "npm install && cd frontend && npm install",
+        "install:all": "npm install && cd frontend && npm install --legacy-peer-deps",
         "prisma:generate": "prisma generate",
         "prebuild": "node ./writeFrontendEnv.mjs",
         "build:server": "tsc",

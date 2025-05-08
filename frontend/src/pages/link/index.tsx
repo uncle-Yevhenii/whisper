@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router';
 
-import { BASE_URL } from '../../api/client';
 import { LocationState } from '../../types';
 import { RouterPath } from '../../constants/route';
+import { sharedClientLink } from '../../utils/sharedClientLink';
 
 import style from './style.module.css';
 
@@ -28,7 +28,6 @@ export default function SharedLink() {
 
     if (!state?.id) return null;
 
-    const shareLink = BASE_URL + state?.id;
     return (
         <>
             <h2 className={style.textTitle}>A link to share</h2>
@@ -36,7 +35,11 @@ export default function SharedLink() {
                 You can send this link to the person you want to share the encrypted information
                 with.
             </p>
-            <textarea className={style.textarea} value={shareLink} disabled></textarea>
+            <textarea
+                className={style.textarea}
+                value={sharedClientLink(state?.id)}
+                disabled
+            ></textarea>
         </>
     );
 }
